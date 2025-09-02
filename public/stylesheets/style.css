@@ -1,39 +1,82 @@
-@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
-h1, h2, h3, h4, h5, h6 {
-font-family: 'Lobster', cursive;
+/* General page styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
-legend {
-font-family: 'Lobster', cursive;
+
+/* Navbar */
+nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ff0000;
 }
-.navbar {
-background-color: #ad1d28;
-border-color: #911821;
+
+nav a {
+  color: #ffcc00;
+  font-weight: bold;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-.navbar-light .navbar-brand {
-font-family: 'Lobster', cursive;
-@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
-h1, h2, h3, h4, h5, h6 {
-font-family: 'Lobster', cursive;
+
+nav a:hover {
+  color: #ff0000;
+  text-decoration: underline;
 }
-legend {
-font-family: 'Lobster', cursive;
+
+/* Headings */
+h1 {
+  font-size: 2.8em;
+  margin-top: 20px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 5px black;
 }
-.navbar {
-background-color: #ad1d28;
-border-color: #911821;
+
+h2 {
+  font-size: 2em;
+  margin-top: 15px;
+  color: #00ffcc;
 }
-.navbar-light .navbar-brand {
-font-family: 'Lobster', cursive;
-@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
-h1, h2, h3, h4, h5, h6 {
-font-family: 'Lobster', cursive;
+
+/* Content box */
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-legend {
-font-family: 'Lobster', cursive;
+
+/* Buttons */
+button {
+  background: #ff0000;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.navbar {
-background-color: #ad1d28;
-border-color: #911821;
+
+button:hover {
+  background: #ffcc00;
+  color: black;
 }
-.navbar-light .navbar-brand {
-font-family: 'Lobster', cursive;
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.9);
+  color: #ccc;
+  font-size: 0.9em;
+  border-top: 2px solid #ff0000;
+}

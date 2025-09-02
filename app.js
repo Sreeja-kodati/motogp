@@ -1,36 +1,19 @@
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-
-const indexRouter = require('./app_server/routes/index');
-const usersRouter = require('./app_server/routes/users');
+const express = require("express");
+const path = require("path");
 
 const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname,'app_server', 'views'));
-app.set('view engine', 'jade');
+// Set view engine (EJS for dynamic pages)
+app.set("views", path.join(__dirname, "app_server", "views"));
+app.set("view engine", "ejs");
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// Middleware
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({ extended: true }));
 
-// ✅ Make sure to pass a middleware/router function here
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// Routes
+const indexRouter = require("./app_server/routes/index");
+app.use("/", indexRouter);
 
-// catch 404
-app.use((req, res, next) => {
-  res.status(404).send('Not Found');
-});
-
-// error handler
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(err.status || 500).send(err.message);
-});
-
+// IMPORTANT: export the app instead of starting it here
 module.exports = app;
